@@ -24,29 +24,29 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 mb-3 sm:mb-4">
             Perguntas Frequentes
           </h2>
-          <p className="text-xl text-gray-600">Tire suas dúvidas antes de começar</p>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600">Tire suas dúvidas antes de começar</p>
         </div>
         
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div key={index} className="bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
               <button
-                className="w-full p-6 text-left font-bold text-lg bg-pink-600 text-white hover:bg-pink-700 transition-colors flex justify-between items-center"
+                className="w-full p-4 sm:p-6 text-left font-bold text-base sm:text-lg bg-pink-600 text-white hover:bg-pink-700 transition-colors flex justify-between items-center min-h-[56px]"
                 onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
               >
-                {faq.question}
-                <span className="text-2xl">
+                <span className="pr-4">{faq.question}</span>
+                <span className="text-xl sm:text-2xl flex-shrink-0">
                   {openFAQ === index ? '−' : '+'}
                 </span>
               </button>
               {openFAQ === index && (
-                <div className="p-6 text-gray-700 bg-gray-50 animate-fade-in">
+                <div className="p-4 sm:p-6 text-gray-700 bg-gray-50 animate-fade-in text-sm sm:text-base leading-relaxed">
                   {faq.answer}
                 </div>
               )}
