@@ -1,6 +1,6 @@
 import React from 'react';
 const VideoDemo = () => {
-  return <section className="py-20 bg-gray-50">
+  return <section className="bg-gray-50 py-[50px]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">

@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
-
 const Pricing = () => {
-  return (
-    <section id="pricing" className="py-12 sm:py-16 lg:py-20 bg-white">
+  return <section id="pricing" className="py-12 sm:py-16 bg-white lg:py-[50px]">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 mb-3 sm:mb-4">
@@ -26,18 +23,12 @@ const Pricing = () => {
               </div>
               
               <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                {[
-                  'Envio imediato com código de rastreio',
-                  'E-books liberados na hora da compra via QR Code',
-                  'Tudo que você precisa para começar a vender HOJE com lucro real'
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3 text-left">
+                {['Envio imediato com código de rastreio', 'E-books liberados na hora da compra via QR Code', 'Tudo que você precisa para começar a vender HOJE com lucro real'].map((feature, index) => <div key={index} className="flex items-center gap-3 text-left">
                     <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-green-600 text-xs sm:text-sm">✓</span>
                     </div>
                     <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 text-base sm:text-lg lg:text-xl py-4 sm:py-5 lg:py-6 rounded-xl sm:rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[48px] sm:min-h-[56px]">
@@ -51,8 +42,6 @@ const Pricing = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Pricing;

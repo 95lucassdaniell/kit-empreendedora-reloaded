@@ -14,7 +14,7 @@ const Credibility = () => {
     const remainingSeconds = seconds % 60;
     return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
   };
-  return <section className="bg-gray-50 py-12 sm:py-16">
+  return <section className="bg-gray-50 py-12 sm:py-[50px]">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center">
           {/* Cronômetro de Urgência */}
