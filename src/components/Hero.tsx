@@ -40,7 +40,7 @@ const Hero = () => {
 
               {/* Subtitle - Better mobile sizing */}
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl opacity-95 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Com apenas um kit, você começa seu próprio negócio hoje mesmo –{' '}
+                Com apenas um kit, você começa seu próprio negócio hoje mesmo -{' '}
                 <strong className="text-yellow-300">sem precisar de estoque, experiência ou loja física.</strong>
               </p>
 
@@ -49,7 +49,8 @@ const Hero = () => {
                 {[
                   '✅ 15 camisetas + materiais de apoio',
                   '✅ E-books com estratégias de vendas',
-                  '✅ Suporte direto via WhatsApp'
+                  '✅ Suporte direto via WhatsApp',
+                  '✅ FRETE GRÁTIS'
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base lg:text-lg">
                     <span className="text-green-300 text-base sm:text-xl flex-shrink-0">{benefit.split(' ')[0]}</span>
