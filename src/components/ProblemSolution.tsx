@@ -1,3 +1,4 @@
+
 import React from 'react';
 const ProblemSolution = () => {
   return <section className="bg-gray-50 py-[50px]">
@@ -7,7 +8,7 @@ const ProblemSolution = () => {
             Por que tantas mulheres desistem de empreender?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Descobrimos os 3 principais obstáculos e criamos a solução perfeita
+            Descobrimos os principais obstáculos e criamos a solução perfeita
           </p>
         </div>
         
