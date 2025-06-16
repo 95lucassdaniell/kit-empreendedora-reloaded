@@ -1,17 +1,36 @@
 
 import React from 'react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import VideoPlayer from './VideoPlayer';
 
 const Testimonials = () => {
-  const testimonials = [
+  const videoTestimonials = [
     {
-      text: "Meu primeiro mês com o kit me rendeu R$960 em lucro. Hoje é minha principal fonte de renda!",
+      videoId: "66f2f35dc98d09000a0f7ed6",
+      thumbnailUrl: "https://images.converteai.net/cb1e1f48-1c32-4d83-8a9a-9156f7d23bbc/players/66f2f35dc98d09000a0f7ed6/thumbnail.jpg",
+      title: "Depoimento sobre sucesso com o kit",
       author: "Juliana Ramos",
       location: "Recife/PE"
     },
     {
-      text: "Eu achava que não conseguiria vender, mas as dicas e suporte fizeram toda a diferença.",
+      videoId: "66f2f35215cb24000b17481d",
+      thumbnailUrl: "https://images.converteai.net/cb1e1f48-1c32-4d83-8a9a-9156f7d23bbc/players/66f2f35215cb24000b17481d/thumbnail.jpg",
+      title: "Como superei o medo de vender",
       author: "Vanessa Nunes",
       location: "Goiânia/GO"
+    },
+    {
+      videoId: "66f2f34bbfbd51000b848435",
+      thumbnailUrl: "https://images.converteai.net/cb1e1f48-1c32-4d83-8a9a-9156f7d23bbc/players/66f2f34bbfbd51000b848435/thumbnail.jpg",
+      title: "Minha jornada empreendedora",
+      author: "Maria Silva",
+      location: "São Paulo/SP"
     }
   ];
 
@@ -26,29 +45,33 @@ const Testimonials = () => {
           <p className="text-xl text-gray-600">Histórias reais de sucesso</p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 p-8 rounded-2xl border-l-4 border-pink-500 hover:shadow-lg transition-shadow"
-            >
-              <div className="text-6xl text-pink-200 mb-4">"</div>
-              <p className="text-lg text-gray-700 italic mb-6 leading-relaxed">
-                {testimonial.text}
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
-                  <span className="text-pink-600 font-bold text-lg">
-                    {testimonial.author.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <div className="font-bold text-pink-600">{testimonial.author}</div>
-                  <div className="text-gray-500 text-sm">{testimonial.location}</div>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="max-w-6xl mx-auto">
+          <Carousel 
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {videoTestimonials.map((video, index) => (
+                <CarouselItem 
+                  key={index} 
+                  className="pl-4 basis-full md:basis-1/2 lg:basis-1/2"
+                >
+                  <VideoPlayer
+                    videoId={video.videoId}
+                    thumbnailUrl={video.thumbnailUrl}
+                    title={video.title}
+                    author={video.author}
+                    location={video.location}
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12" />
+            <CarouselNext className="hidden md:flex -right-12" />
+          </Carousel>
         </div>
       </div>
     </section>
