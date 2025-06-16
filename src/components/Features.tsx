@@ -36,27 +36,32 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section className="py-8 sm:py-12 lg:py-16 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 mb-3 sm:mb-4 leading-tight">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-800 mb-2 sm:mb-3 leading-tight">
             O que você recebe no{' '}
             <span className="text-pink-600">Kit Empreendedora</span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600">Tudo que você precisa para começar seu negócio hoje</p>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600">Tudo que você precisa para começar seu negócio hoje</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative"
             >
-              <div className="text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6 text-center">{feature.icon}</div>
-              <h4 className="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4 text-center leading-tight">
+              {/* Badge numerado */}
+              <div className="absolute -top-2 -right-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm sm:text-base font-bold shadow-lg">
+                {index + 1}
+              </div>
+              
+              <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 text-center">{feature.icon}</div>
+              <h4 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3 text-center leading-tight">
                 {feature.title}
               </h4>
-              <p className="text-gray-600 text-center leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-600 text-center leading-relaxed text-xs sm:text-sm">
                 {feature.description}
               </p>
             </div>
