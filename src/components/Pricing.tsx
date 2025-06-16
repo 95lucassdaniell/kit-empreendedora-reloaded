@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 const Pricing = () => {
@@ -23,6 +24,12 @@ const Pricing = () => {
               </div>
               
               <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                <div className="flex items-center gap-3 text-left">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-green-600 text-xs sm:text-sm">✓</span>
+                  </div>
+                  <span className="text-gray-700 text-sm sm:text-base"><strong>FRETE GRÁTIS</strong></span>
+                </div>
                 {['Envio imediato com código de rastreio', 'E-books liberados na hora da compra via QR Code', 'Tudo que você precisa para começar a vender HOJE com lucro real'].map((feature, index) => <div key={index} className="flex items-center gap-3 text-left">
                     <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-green-600 text-xs sm:text-sm">✓</span>
