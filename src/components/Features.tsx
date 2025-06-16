@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 
 const Features = () => {
@@ -52,8 +53,8 @@ const Features = () => {
               key={index}
               className="bg-white p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative"
             >
-              {/* Badge numerado */}
-              <div className="absolute -top-2 -right-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm sm:text-base font-bold shadow-lg">
+              {/* Badge numerado com fundo branco */}
+              <div className="absolute -top-3 -right-3 bg-white border-2 border-pink-500 text-pink-600 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-sm sm:text-base font-bold shadow-md">
                 {index + 1}
               </div>
               
@@ -73,3 +74,4 @@ const Features = () => {
 };
 
 export default Features;
+
