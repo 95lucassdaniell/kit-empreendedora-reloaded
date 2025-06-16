@@ -1,6 +1,6 @@
 
-
 import React from 'react';
+import { Truck } from 'lucide-react';
 
 const Features = () => {
   const features = [
@@ -30,9 +30,9 @@ const Features = () => {
       description: 'Aprenda a faturar no Instagram'
     },
     {
-      icon: '🤝',
-      title: 'Suporte via WhatsApp',
-      description: 'Acompanhamento direto com nossa equipe'
+      icon: 'truck',
+      title: 'Frete Grátis',
+      description: 'Frete grátis para todo o brasil'
     }
   ];
 
@@ -58,7 +58,13 @@ const Features = () => {
                 {index + 1}
               </div>
               
-              <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 text-center">{feature.icon}</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 text-center">
+                {feature.icon === 'truck' ? (
+                  <Truck className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto text-green-600" />
+                ) : (
+                  feature.icon
+                )}
+              </div>
               <h4 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3 text-center leading-tight">
                 {feature.title}
               </h4>
@@ -74,4 +80,3 @@ const Features = () => {
 };
 
 export default Features;
-
