@@ -1,11 +1,33 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   const scrollToPricing = () => {
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    // Carregar script do vídeo
+    const videoId = '66ec6ebdbde461000b36ec86';
+    const script = document.createElement('script');
+    script.src = `https://scripts.converteai.net/cb1e1f48-1c32-4d83-8a9a-9156f7d23bbc/players/${videoId}/player.js`;
+    script.async = true;
+    script.id = `scr_${videoId}`;
+    
+    // Verificar se o script já foi carregado
+    if (!document.getElementById(`scr_${videoId}`)) {
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      // Cleanup
+      const existingScript = document.getElementById(`scr_${videoId}`);
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-pink-500 via-rose-500 to-purple-600 text-white overflow-hidden">
@@ -88,14 +110,44 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* Hero Image - Order 2 on mobile, better sizing */}
+            {/* Hero Video - Order 2 on mobile, better sizing */}
             <div className="relative order-2 w-full max-w-md sm:max-w-lg lg:max-w-none mx-auto">
               <div className="relative bg-white/10 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl">
-                <img
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Mulher empoderada segurando camisetas com elementos de lucro e independência"
-                  className="w-full h-auto rounded-xl sm:rounded-2xl shadow-xl"
-                />
+                <div 
+                  id="vid_66ec6ebdbde461000b36ec86" 
+                  style={{ 
+                    position: 'relative', 
+                    width: '100%', 
+                    padding: '56.25% 0 0' 
+                  }}
+                  className="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl"
+                >
+                  <img 
+                    id="thumb_66ec6ebdbde461000b36ec86" 
+                    src="https://images.converteai.net/cb1e1f48-1c32-4d83-8a9a-9156f7d23bbc/players/66ec6ebdbde461000b36ec86/thumbnail.jpg" 
+                    style={{
+                      position: 'absolute', 
+                      top: 0, 
+                      left: 0, 
+                      width: '100%', 
+                      height: '100%', 
+                      objectFit: 'cover', 
+                      display: 'block'
+                    }} 
+                    alt="thumbnail" 
+                  />
+                  <div 
+                    id="backdrop_66ec6ebdbde461000b36ec86" 
+                    style={{
+                      WebkitBackdropFilter: 'blur(5px)', 
+                      backdropFilter: 'blur(5px)', 
+                      position: 'absolute', 
+                      top: 0, 
+                      height: '100%', 
+                      width: '100%'
+                    }}
+                  />
+                </div>
                 
                 {/* Floating Elements - Mobile positioned */}
                 <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-green-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg animate-bounce">
