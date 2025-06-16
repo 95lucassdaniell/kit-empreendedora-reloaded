@@ -1,10 +1,28 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const [timeLeft, setTimeLeft] = useState(600); // 10 minutos em segundos
+
   const scrollToPricing = () => {
     document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft(prev => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timeLeft]);
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
   };
 
   useEffect(() => {
@@ -43,10 +61,12 @@ const Hero = () => {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
             {/* Text Content - Always first on mobile */}
             <div className="text-center lg:text-left space-y-6 sm:space-y-8 order-1">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold border border-white/30">
-                <span className="text-yellow-300">🔥</span>
-                <span className="text-center sm:text-left">Mais de 52.200 mulheres já transformaram sua renda</span>
+              {/* Badge com Cronômetro */}
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-orange-500 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold border border-red-400/30 animate-pulse">
+                <span className="text-yellow-300">⏰</span>
+                <span className="text-center sm:text-left">
+                  Essa oferta acaba em: {timeLeft > 0 ? formatTime(timeLeft) : '00:00'}
+                </span>
               </div>
 
               {/* Main Headline - Mobile optimized sizes */}
