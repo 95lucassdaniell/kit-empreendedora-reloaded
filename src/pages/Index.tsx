@@ -11,6 +11,7 @@ import Comparison from '@/components/Comparison';
 import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import FinalCTA from '@/components/FinalCTA';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <Pricing />
       <FAQ />
       <FinalCTA />
+      <FloatingWhatsApp />
     </div>
   );
 };

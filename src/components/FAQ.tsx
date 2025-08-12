@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WhatsAppButton from '@/components/WhatsAppButton';
 const FAQ = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const faqs = [{
@@ -35,6 +36,18 @@ const FAQ = () => {
                   {faq.answer}
                 </div>}
             </div>)}
+        </div>
+        
+        <div className="text-center mt-8 sm:mt-12">
+          <p className="text-gray-600 mb-4 text-base sm:text-lg">
+            Ainda tem dúvidas? Fale diretamente conosco!
+          </p>
+          <WhatsAppButton 
+            message="Olá! Tenho algumas dúvidas sobre o kit de camisetas. Podem me ajudar?"
+            variant="inline"
+            size="lg"
+            className="mx-auto"
+          />
         </div>
       </div>
     </section>;

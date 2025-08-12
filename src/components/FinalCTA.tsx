@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const FinalCTA = () => {
   const scrollToPricing = () => {
@@ -19,12 +20,23 @@ const FinalCTA = () => {
           <p>🎯 Estoque + Estratégia + Suporte em uma única compra</p>
         </div>
         
-        <Button
-          onClick={scrollToPricing}
-          className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 text-lg sm:text-xl lg:text-2xl px-8 sm:px-12 lg:px-16 py-4 sm:py-6 lg:py-8 rounded-full font-bold shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 hover:scale-105 min-h-[48px] sm:min-h-[56px] w-full sm:w-auto max-w-md sm:max-w-none mx-auto"
-        >
-          👉 Garantir meu kit agora
-        </Button>
+        <div className="space-y-4 sm:space-y-6">
+          <Button
+            onClick={scrollToPricing}
+            className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 text-lg sm:text-xl lg:text-2xl px-8 sm:px-12 lg:px-16 py-4 sm:py-6 lg:py-8 rounded-full font-bold shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 hover:scale-105 min-h-[48px] sm:min-h-[56px] w-full sm:w-auto max-w-md sm:max-w-none mx-auto"
+          >
+            👉 Garantir meu kit agora
+          </Button>
+          
+          <div className="max-w-md mx-auto">
+            <WhatsAppButton 
+              message="🔥 Estou interessada no kit completo por R$ 359,96! Ainda tem disponível?"
+              variant="inline"
+              size="lg"
+              className="w-full bg-white hover:bg-gray-100 text-green-600 border-2 border-green-500"
+            />
+          </div>
+        </div>
         
         <div className="mt-6 sm:mt-8 text-yellow-200 text-sm sm:text-base">
           ⚡ Últimas unidades disponíveis

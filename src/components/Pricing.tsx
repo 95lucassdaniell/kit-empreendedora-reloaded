@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import WhatsAppButton from '@/components/WhatsAppButton';
 const Pricing = () => {
   return <section id="pricing" className="py-12 sm:py-16 bg-white lg:py-[50px]">
       <div className="container mx-auto px-4 sm:px-6">
@@ -38,9 +39,18 @@ const Pricing = () => {
                   </div>)}
               </div>
               
-              <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 text-base sm:text-lg lg:text-xl py-4 sm:py-5 lg:py-6 rounded-xl sm:rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[48px] sm:min-h-[56px]">
-                🛒 Garantir meu kit agora
-              </Button>
+              <div className="space-y-3">
+                <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 text-base sm:text-lg lg:text-xl py-4 sm:py-5 lg:py-6 rounded-xl sm:rounded-2xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[48px] sm:min-h-[56px]">
+                  🛒 Garantir meu kit agora
+                </Button>
+                
+                <WhatsAppButton 
+                  message="Quero saber mais sobre o kit de camisetas por R$ 359,96. Posso tirar algumas dúvidas?"
+                  variant="inline"
+                  size="lg"
+                  className="w-full"
+                />
+              </div>
               
               <div className="mt-4 sm:mt-6 text-xs sm:text-sm text-gray-500">
                 ⚡ Promoção por tempo limitado

@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutos em segundos
@@ -101,8 +102,8 @@ const Hero = () => {
                 ))}
               </div>
 
-              {/* CTA Button - Mobile optimized */}
-              <div className="pt-4 sm:pt-6">
+              {/* CTA Buttons - Mobile optimized */}
+              <div className="pt-4 sm:pt-6 space-y-3 sm:space-y-4">
                 <Button
                   onClick={scrollToPricing}
                   className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 text-base sm:text-lg lg:text-xl px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-full font-bold shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 hover:scale-105 w-full sm:w-auto min-h-[48px] sm:min-h-[56px]"
@@ -110,6 +111,15 @@ const Hero = () => {
                   <span className="mr-2">🚀</span>
                   Quero começar agora com meu kit
                 </Button>
+                
+                <div className="w-full sm:w-auto">
+                  <WhatsAppButton 
+                    message="Olá! Vi o anúncio das camisetas e tenho interesse. Pode me explicar melhor como funciona?"
+                    variant="inline"
+                    size="lg"
+                    className="w-full sm:w-auto"
+                  />
+                </div>
                 
                 <p className="text-xs sm:text-sm opacity-75 mt-3 sm:mt-4">
                   <span className="text-yellow-300">⚡</span> Últimas unidades disponíveis • Envio imediato
