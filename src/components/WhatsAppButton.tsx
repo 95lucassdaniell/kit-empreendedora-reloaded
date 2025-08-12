@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import whatsappIcon from '@/assets/whatsapp-icon.png';
 
 interface WhatsAppButtonProps {
   message?: string;
@@ -51,8 +52,14 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
       onClick={handleClick}
       className={`${getVariantStyles()} ${getSizeStyles()} ${className}`}
     >
-      <span className="mr-2">📱</span>
-      {variant === 'floating' ? '' : 'Falar no WhatsApp'}
+      {variant === 'floating' ? (
+        <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6" />
+      ) : (
+        <>
+          <span className="mr-2">📱</span>
+          Falar no WhatsApp
+        </>
+      )}
     </Button>
   );
 };
